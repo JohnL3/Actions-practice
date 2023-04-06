@@ -1,6 +1,6 @@
 # This is the basic workflow to help you get started with  Actions
 
-name: CI
+name: Github Actions practice
 
 # Controls when the workflow will run
 on:
