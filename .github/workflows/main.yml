@@ -35,3 +35,12 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+
+  variables:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 'Print values of env vars'
+      env:
+          First_Name: 'John'
+      run: echo 'Hello ${{ env.First_Name}}'
