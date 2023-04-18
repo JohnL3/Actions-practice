@@ -67,3 +67,11 @@ There are a few ways to create and use variables
       run: |
         echo "${{env.current_state}}" # This will output ON
 ```
+
+To view the default variables  
+```yml
+  default-variables:
+    runs-on: ubuntu-latest
+    steps:
+     - run: env
+```
