@@ -52,7 +52,7 @@ jobs:
       run: |
         echo "${{env.current_state}}" # This will output ON
   secret_variables:
-    runs-on: ununtu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: 'access secret'
         run: |
