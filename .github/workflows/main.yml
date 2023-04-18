@@ -44,3 +44,11 @@ jobs:
       env:
           First_Name: 'John'
       run: echo 'Hello ${{ env.First_Name}}'
+  
+    - name: 'Set value'
+      run: |
+        echo "current_state=ON" >> $GITHUB_ENV
+
+    - name: "Use the value"
+      run: |
+        echo "${{env.current_state}} # This will output ON
