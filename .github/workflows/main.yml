@@ -61,6 +61,6 @@ jobs:
   secrets:
     runs-on: ubuntu-latest
     steps:
-     - name: 'Print secret'
+     - name: 'Access secret'
      - run: |
-          echo "Secret value: ${{ secrets.CHAT_BOT }}"
+         echo "Secret value: ${{ secrets.CHAT_BOT }}"
