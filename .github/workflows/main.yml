@@ -51,3 +51,9 @@ jobs:
     - name: "Use the value"
       run: |
         echo "${{env.current_state}}" # This will output ON
+  secret_variables:
+    runs-on: ununtu-latest
+    steps:
+    - name: 'access secret'
+      run: |
+        echo "Secret value: ${{ secrets.CHAT_BOT }}"
