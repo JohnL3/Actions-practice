@@ -65,5 +65,5 @@ There are a few ways to create and use variables
     - name: "Use the value"
       id: step_two
       run: |
-        echo "${{env.current_state}} # This will output ON
+        echo "${{env.current_state}}" # This will output ON
 ```

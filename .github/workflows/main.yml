@@ -51,4 +51,4 @@ jobs:
 
     - name: "Use the value"
       run: |
-        echo "${{env.current_state}} # This will output ON
+        echo "${{env.current_state}}" # This will output ON
