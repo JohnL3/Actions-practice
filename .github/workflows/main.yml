@@ -57,3 +57,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
      - run: env
+
+  secrets:
+    runs-on: ubuntu-latest
+    steps:
+     - name: 'Print secret'
+     - run: |
+          echo "Secret value: ${{ secrets.CHAT_BOT }}"

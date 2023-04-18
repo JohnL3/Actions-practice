@@ -75,3 +75,12 @@ To view the default variables
     steps:
      - run: env
 ```
+To access secret variables set up on github  
+```yml
+  secrets:
+    runs-on: ubuntu-latest
+    steps:
+     - name: 'Access secret'
+     - run: |
+          echo "Secret value: ${{ secrets.CHAT_BOT }}"
+```
