@@ -48,7 +48,7 @@ There are a few ways to create and use variables
     runs-on: ubuntu-latest
 
     steps:
-    - name: 'Print values of env vars'
+    - name: 'Create and use env variables'
     # Use the env key
       env:
           First_Name: 'John'
@@ -56,4 +56,14 @@ There are a few ways to create and use variables
       run: |
         echo "First_Name $First_Name"
         echo 'Hello ${{ env.First_Name}}'
+
+    - name: 'Another way'
+      id: step_one
+      run: |
+        echo "current_state=ON" >> $GITHUB_ENV
+
+    - name: "Use the value"
+      id: step_two
+      run: |
+        echo "${{env.current_state}} # This will output ON
 ```
