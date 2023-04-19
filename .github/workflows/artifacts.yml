@@ -23,7 +23,7 @@ jobs:
     needs: upload_artifact
     steps:
      - name: 'download_artifact'
-     - uses: actions/upload-artifact@v2
+       uses: actions/download-artifact@v2
        with:
          name: file
      - run: cat file.txt
