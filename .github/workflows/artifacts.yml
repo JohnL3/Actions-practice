@@ -20,7 +20,7 @@ jobs:
          path: file.txt
   Artifact_download:
     runs-on: ubuntu-latest
-    needs: upload_artifact
+    needs: Artifact_upload
     steps:
      - name: download_artifact
        uses: actions/download-artifact@v2
