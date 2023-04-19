@@ -84,4 +84,28 @@ To access secret variables set up on github
        run: |
           echo "Secret value: ${{ secrets.CHAT_BOT }}"
 ```
+Github action: uploand-artifact and download-artifact
+```yml
+  Artifact_upload:
+    runs-on: ubuntu-latest
+    steps:
+     - name: 'upload_artifact'
+       run: echo "Add this text content to a file" > file.txt
+    
+     - uses: actions/upload-artifact@v2
+       with:
+         name: file
+         path: file.txt
 
+  Artifact_download:
+    runs-on: ubuntu-latest
+    needs: upload_artifact
+    steps:
+     - name: 'download artifact'
+    
+     - uses: actions/upload-artifact@v2
+       with:
+         name: file
+         path: file.txt
+     - run: cat file.txt
+```

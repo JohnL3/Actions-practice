@@ -1,0 +1,32 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Artifacts Demo
+
+# Controls when the workflow will run
+on:
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  Artifact_upload:
+    runs-on: ubuntu-latest
+    steps:
+     - name: 'upload_artifact'
+       run: echo "Add this text content to a file" > file.txt
+    
+     - uses: actions/upload-artifact@v2
+       with:
+         name: file
+         path: file.txt
+
+  Artifact_download:
+    runs-on: ubuntu-latest
+    needs: upload_artifact
+    steps:
+     - name: 'download artifact'
+    
+     - uses: actions/upload-artifact@v2
+       with:
+         name: file
+         path: file.txt
+     - run: cat file.txt
