@@ -11,7 +11,7 @@ jobs:
   Artifact_upload:
     runs-on: ubuntu-latest
     steps:
-     - name: 'upload_artifact'
+     - name: upload_artifact
        run: echo "Add this text content to a file" > file.txt
     
      - uses: actions/upload-artifact@v2
@@ -22,7 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: upload_artifact
     steps:
-     - name: 'download_artifact'
+     - name: download_artifact
        uses: actions/download-artifact@v2
        with:
          name: file
