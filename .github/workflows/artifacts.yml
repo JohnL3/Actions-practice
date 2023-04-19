@@ -19,14 +19,3 @@ jobs:
          name: file
          path: file.txt
 
-  Artifact_download:
-    runs-on: ubuntu-latest
-    needs: upload_artifact
-    steps:
-     - name: 'download artifact'
-    
-     - uses: actions/upload-artifact@v2
-       with:
-         name: file
-         path: file.txt
-     - run: cat file.txt
