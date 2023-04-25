@@ -1,5 +1,5 @@
 name: Assign Reviewer
-
+# for pull requests
 on:
   pull_request:
     types: [opened]
