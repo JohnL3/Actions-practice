@@ -11,10 +11,10 @@ jobs:
       - name: Assign Reviewer
         uses: peter-evans/create-pull-request@v3.8.0
         with:
-          token: ${{ secrets.App_PRIVATE_KEY }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: "Assigning reviewer to pull request"
           title: "Assigning reviewer to pull request"
           body: "Please review this pull request."
           branch: "add-reviewer-to-pull-request-${{ github.event.pull_request.number }}"
           labels: "review-requested"
-          reviewers: "JohnL3"
+          reviewers: "NielC"
