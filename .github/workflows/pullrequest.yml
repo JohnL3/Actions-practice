@@ -1,20 +1,32 @@
 name: Assign Reviewer
-# for pull requests
+
 on:
-  pull_request:
-    types: [opened]
+  push:
+    branches-ignore:
+      - main
+    # Trigger only when pushing to an existing branch or creating a new branch
+    # Ref: https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#onpushpull_requestbranches
+    # If you don't want to trigger on tag pushes, remove the `tags` key from the `push` event
+    # For more information, refer to the documentation linked above.
+    paths-ignore:
+      - 'README.md' # ignore changes to this file only
+      - 'docs/**' # ignore changes in the docs directory
+      - '.github/**' # ignore changes in the .github directory
+    tags-ignore:
+      - '*'
 
 jobs:
   assign-reviewer:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - name: Assign Reviewer
-        uses: peter-evans/create-pull-request@v3.8.0
+        uses: peter-evans/create-pull-request@v3.9.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: "Assigning reviewer to pull request"
           title: "Assigning reviewer to pull request"
           body: "Please review this pull request."
-          branch: "add-reviewer-to-pull-request-${{ github.event.pull_request.number }}"
+          branch: "add-reviewer-to-pull-request-${{ github.sha }}"
           labels: "review-requested"
           reviewers: "NielC"
