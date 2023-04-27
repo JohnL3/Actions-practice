@@ -41,7 +41,7 @@ jobs:
         run: echo Hello, world!
 ```
 ### Variables
-There are a few ways to create and use variables
+There are a few ways to create and use variables.
 
 ```yml
   variables:
